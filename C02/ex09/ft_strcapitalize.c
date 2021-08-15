@@ -48,18 +48,18 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
-	ft_strlowcase(str); //irá transformar todas as letras em minúsculo
-	if (str[0] >= 'a' && str[0] <= 'z') //irá verificar se a primeira letra está entre 'a' e 'z'
-		str[0] -= 32; // se sim, irá transformar em maiúsculo
-	while (str[i] != '\0') //irá percorrer a string até o final
+	ft_strlowcase(str);
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 32;
+	while (str[i] != '\0')
 	{
-		i++; //avança para o próximo caracter
-		if (str[i] >= 'a' && str[i] <= 'z') //irá verificar novamente se está entre 'a' e 'z' 
+		i++;
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (!ft_char_is_alpha(str[i - 1])) //irá verificar se o caracter anterior é alpha
-				if (!ft_char_is_numeric(str[i - 1])) //irá verificar se o caracter anterior é numérico
-					str[i] -= 32; //se não for ele transforma o caracter em maiúsculo
+			if (!ft_char_is_alpha(str[i - 1]))
+				if (!ft_char_is_numeric(str[i - 1]))
+					str[i] -= 32;
 		}
 	}
-	return (str); //retorna a string
+	return (str);
 }
